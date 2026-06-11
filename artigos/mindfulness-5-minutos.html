@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- ============================================================
-         SEO — Mindfulness
+         EDITAR: SEO — mudar para cada artigo
          ============================================================ -->
     <meta name="description" content="A ciência confirma: apenas 5 minutos de mindfulness por dia alteram fisicamente o cérebro. Descobre como começar hoje, sem apps nem experiência prévia.">
     <meta name="keywords" content="mindfulness, meditação, reduzir stress, ansiedade, atenção plena, saúde mental, Portugal">
     <meta name="author" content="Ana Silva">
 
     <meta property="og:title" content="Mindfulness: Como 5 Minutos por Dia Transformam o Teu Cérebro | BioEquilíbrio">
-    <meta property="og:description" content="A ciência confirma: apenas 5 minutos de mindfulness por dia alteram fisicamente o cérebro. Descobre como começar hoje.">
+    <meta property="og:description" content="Descobre os 5 alimentos com maior poder anti-inflamatório e como integrá-los na tua alimentação diária.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80&auto=format&fit=crop">
     <meta property="og:url" content="https://bioequilibrio.online/artigos/mindfulness-5-minutos.html">
     <meta property="og:type" content="article">
@@ -26,7 +26,7 @@
 
     <title>Mindfulness: Como 5 Minutos por Dia Transformam o Teu Cérebro | BioEquilíbrio</title>
 
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="canonical" href="https://bioequilibrio.online/artigos/mindfulness-5-minutos.html">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -581,4 +581,487 @@
             white-space: nowrap;
             transition: all .18s;
         }
-       
+        .nl-form button:hover { background: #e8fde4; }
+        .nl-note { font-size: .72rem; opacity: .5; }
+
+        /* === FOOTER === */
+        footer { background: var(--blue); color: #fff; }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2.5rem 1.25rem 1.5rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer-brand { font-weight: 700; font-size: 1.2rem; margin-bottom: .6rem; }
+        .footer-brand .bio { color: var(--green); }
+        .footer-desc { font-size: .84rem; opacity: .65; line-height: 1.6; margin-bottom: 1rem; }
+        .footer-social { display: flex; gap: .65rem; }
+        .soc-icon { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,.1); display: flex; align-items: center; justify-content: center; transition: background .18s; }
+        .soc-icon:hover { background: rgba(255,255,255,.22); }
+        .soc-icon svg { width: 16px; height: 16px; fill: #fff; }
+        .footer-col h4 { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; opacity: .45; margin-bottom: .9rem; }
+        .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+        .footer-col ul li a { font-size: .86rem; opacity: .75; transition: opacity .18s; }
+        .footer-col ul li a:hover { opacity: 1; }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,.1);
+            padding-top: 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: .78rem;
+            opacity: .4;
+        }
+
+        /* === BOTÃO TOPO === */
+        #back-top {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--green);
+            color: #fff;
+            border: none;
+            font-size: 1.1rem;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,.15);
+            transition: all .2s;
+            z-index: 80;
+        }
+        #back-top.visible { display: flex; }
+        #back-top:hover { background: var(--green-dark); transform: translateY(-2px); }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .nav-hamburger { display: flex; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .related-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .related-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .nl-form { flex-direction: column; }
+            .footer-bottom { flex-direction: column; gap: .4rem; text-align: center; }
+            .author-box-inner { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Barra de progresso de leitura -->
+<div id="read-progress"></div>
+
+<!-- ================================================================
+     NAV
+     ================================================================ -->
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="nav-brand">
+            <img src="../logo.png" alt="BioEquilíbrio">
+            <span><span class="bio">Bio</span><span class="equi">Equilíbrio</span></span>
+        </a>
+        <div class="nav-links">
+            <a href="../index.html">Início</a>
+            <a href="#">Mente</a>
+            <a href="#">Exercício</a>
+            <a href="#">Mente</a>
+            <a href="#">Receitas</a>
+            <a href="#">Bem-estar</a>
+            <a href="../index.html#newsletter" class="nav-cta">Newsletter</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Abrir menu" onclick="openMenu()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <line x1="3" y1="6"  x2="21" y2="6"/>
+                <line x1="3" y1="12" x2="21" y2="12"/>
+                <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+        </button>
+    </div>
+</nav>
+
+<!-- Menu Mobile -->
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-top">
+        <span class="nav-brand"><span class="bio">Bio</span><span class="equi">Equilíbrio</span></span>
+        <button onclick="closeMenu()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/>
+            </svg>
+        </button>
+    </div>
+    <a class="mm-link" href="#" onclick="closeMenu()"><span class="mm-dot" style="background:var(--green)"></span>Mente</a>
+    <a class="mm-link" href="#" onclick="closeMenu()"><span class="mm-dot" style="background:var(--blue)"></span>Exercício</a>
+    <a class="mm-link" href="#" onclick="closeMenu()"><span class="mm-dot" style="background:var(--purple)"></span>Mente</a>
+    <a class="mm-link" href="#" onclick="closeMenu()"><span class="mm-dot" style="background:var(--orange)"></span>Receitas</a>
+    <a class="mm-link" href="#" onclick="closeMenu()"><span class="mm-dot" style="background:var(--teal)"></span>Bem-estar</a>
+    <div class="mm-footer">
+        <a class="mm-cta" href="../index.html#newsletter" onclick="closeMenu()">Subscrever Newsletter</a>
+    </div>
+</div>
+
+<!-- ================================================================
+     ARTIGO
+     ================================================================ -->
+<main>
+<article>
+
+    <!-- BREADCRUMB -->
+    <nav class="breadcrumb" aria-label="Localização">
+        <a href="../index.html">Início</a>
+        <span>›</span>
+        <!-- EDITAR: categoria e link -->
+        <a href="#">Mente</a>
+        <span>›</span>
+        <span>Mindfulness: Como 5 Minutos por Dia Transformam o Teu Cérebro</span>
+    </nav>
+
+    <!-- CABEÇALHO DO ARTIGO -->
+    <header class="art-header">
+        <!-- EDITAR: classe da categoria (alimentacao / exercicio / mente / receitas / bemestar) -->
+        <span class="cat-tag mente">🥗 Mente</span>
+
+        <!-- EDITAR: Título -->
+        <h1>Mindfulness: Como 5 Minutos por Dia Transformam o Teu Cérebro</h1>
+
+        <div class="art-meta">
+            <!-- EDITAR: autor, data, tempo de leitura -->
+            <span class="author">Por Ana Silva</span>
+            <span class="sep">·</span>
+            <span>10 de Junho de 2026</span>
+            <span class="sep">·</span>
+            <span>⏱ 5 min de leitura</span>
+        </div>
+    </header>
+
+    <!-- IMAGEM PRINCIPAL -->
+    <!-- EDITAR: src da imagem (usar URL do Unsplash ou caminho local /artigos/imagens/) -->
+    <figure class="art-hero">
+        <img
+            src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80&auto=format&fit=crop"
+            alt="Bowl colorido com legumes, cereais integrais e proteína vegetal"
+            loading="eager"
+        >
+        <figcaption>A paz interior começa com um momento de presença.</figcaption>
+    </figure>
+
+    <!-- CORPO DO ARTIGO -->
+    <!-- EDITAR: todo o conteúdo abaixo -->
+    <div class="art-body" id="art-content">
+        <p>A ciência confirma: apenas 5 minutos de mindfulness por dia alteram fisicamente o cérebro. Descobre como começar hoje, sem apps nem experiência prévia.</p>
+
+        <p>Vivemos num mundo de distração constante. O nosso cérebro está permanentemente a saltar entre notificações, preocupações com o futuro e arrependimentos do passado. Esta "mente errante" não é apenas cansativa — está cientificamente ligada a maiores níveis de cortisol e stress crónico.</p>
+
+        <h2>O que é, afinal, o Mindfulness?</h2>
+        <p>Mindfulness, ou Atenção Plena, é a capacidade humana básica de estar totalmente presente, consciente de onde estamos e do que estamos a fazer, sem reagir excessivamente ou nos sentirmos sobrecarregados pelo que acontece ao nosso redor.</p>
+
+        <div class="highlight-box">
+            <p>💡 <strong>Mito comum:</strong> Meditar não é "limpar a mente" ou parar de pensar. É observar os pensamentos a passar, como nuvens no céu, e escolher voltar a atenção para o momento presente (geralmente através da respiração).</p>
+        </div>
+
+        <h2>A Ciência por Trás dos 5 Minutos</h2>
+        <p>Estudos da Universidade de Harvard demonstraram que a prática regular de mindfulness, mesmo em sessões curtas, aumenta a densidade da matéria cinzenta no hipocampo (ligado à aprendizagem e memória) e reduz a amígdala (o centro do medo e stress no cérebro).</p>
+
+        <figure>
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&q=80&auto=format&fit=crop" alt="Pessoa em meditação serena">
+            <figcaption>A consistência é mais importante do que a duração da sessão.</figcaption>
+        </figure>
+
+        <h2>Como Começar Hoje (Plano de 5 Minutos)</h2>
+        <ol>
+            <li><strong>Encontra um lugar calmo:</strong> Senta-te de forma confortável, com as costas direitas mas não tensas.</li>
+            <li><strong>Define o cronómetro:</strong> 5 minutos são suficientes para começar.</li>
+            <li><strong>Foca-te na respiração:</strong> Sente o ar a entrar e a sair. Não precises de mudar a forma como respiras.</li>
+            <li><strong>Observa a mente:</strong> Quando (não se) a tua mente divagar, nota o pensamento e, gentilmente, volta ao foco na respiração.</li>
+            <li><strong>Termina com gratidão:</strong> Nota como te sentes antes de voltares à tua rotina.</li>
+        </ol>
+
+        <blockquote>
+            "Não podes parar as ondas, mas podes aprender a surfar."
+            <cite>— Jon Kabat-Zinn, fundador da Redução de Stress Baseada em Mindfulness (MBSR)</cite>
+        </blockquote>
+
+        <h2>Conclusão</h2>
+        <p>Mindfulness é um treino para a mente. Tal como vais ao ginásio para fortalecer os músculos, meditas para fortalecer a tua capacidade de foco e resiliência emocional. Começa com 5 minutos amanhã ao acordar e observa a diferença na tua clareza mental.</p>
+</div>
+
+        <h2>2. Gengibre — A Raiz Antiaging</h2>
+
+        <p>O gengibre contém gingeróis e shogaóis — compostos que inibem a produção de citocinas pró-inflamatórias. Estudos mostram benefícios claros na redução da dor muscular pós-exercício e na diminuição da dor em pessoas com osteoartrite.</p>
+
+        <figure>
+            <img
+                src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=900&q=80&auto=format&fit=crop"
+                alt="Raiz de gengibre fresco cortada ao meio mostrando o interior"
+                loading="lazy"
+            >
+            <figcaption>O gengibre fresco tem maior concentração de gingeróis do que a forma seca em pó.</figcaption>
+        </figure>
+
+        <blockquote>
+            "A alimentação anti-inflamatória não é uma dieta — é um estilo de vida. Pequenas escolhas diárias acumulam-se em transformações profundas na saúde a longo prazo."
+            <cite>— Dr. Andrew Weil, médico e investigador em medicina integrativa</cite>
+        </blockquote>
+
+        <h2>3. Azeite Virgem Extra — A Base da Dieta Mediterrânica</h2>
+
+        <p>O oleocantal, um polifenol exclusivo do azeite virgem extra de qualidade, tem uma ação anti-inflamatória semelhante ao ibuprofeno em doses equivalentes. A investigação por detrás dos benefícios da dieta mediterrânica coloca o azeite no centro das suas propriedades protetoras.</p>
+
+        <p>A chave está na qualidade: escolhe azeites com baixa acidez (&lt;0,5%) e, preferencialmente, de produção nacional. O calor destrói os polifenóis, por isso usa-o principalmente a cru — em saladas, sopas ou sobre legumes grelhados.</p>
+
+        <h2>4. Frutos Vermelhos — Antioxidantes em Estado Puro</h2>
+
+        <p>Mirtilos, morangos, framboesas e amoras são ricos em antocianinas — pigmentos com forte ação antioxidante e anti-inflamatória. O consumo regular está associado a menor risco de doenças cardíacas e a uma melhor função cognitiva.</p>
+
+        <ul>
+            <li><strong>Mirtilos</strong> — campeões em antocianinas, benéficos para a memória</li>
+            <li><strong>Morangos</strong> — ricos em vitamina C e quercetina</li>
+            <li><strong>Framboesas</strong> — alto teor de fibra e elaginotaninos</li>
+            <li><strong>Amoras</strong> — excelente relação qualidade-preço, disponíveis em Portugal</li>
+        </ul>
+
+        <h2>5. Salmão e Peixes Gordos — Ómega-3 Essencial</h2>
+
+        <p>Os ácidos gordos ómega-3 (EPA e DHA), abundantes no salmão, sardinha, cavala e atum, são percursores de moléculas chamadas resolvinas e protectinas — que literalmente "resolvem" processos inflamatórios no organismo.</p>
+
+        <p>A sardinha é uma das melhores opções: acessível, sustentável, com altíssimo teor de ómega-3 e um produto verdadeiramente nacional. Consome peixe gordo pelo menos 2 vezes por semana.</p>
+
+        <h2>Conclusão: A Consistência é Tudo</h2>
+
+        <p>Nenhum destes alimentos é um milagre isolado. O poder está na combinação e na regularidade. Uma semana a comer salmão não apaga meses de má alimentação — mas um padrão alimentar rico nestes ingredientes ao longo do tempo tem efeitos mensuráveis na inflamação sistémica, na energia e na longevidade.</p>
+
+        <p>Começa com uma mudança pequena: adiciona cúrcuma e pimenta preta ao almoço de amanhã. O teu corpo agradece.</p>
+
+    </div>
+    <!-- FIM DO CORPO DO ARTIGO -->
+
+    <!-- TAGS -->
+    <!-- EDITAR: adicionar as tags relevantes -->
+    <div class="art-tags">
+        <a href="#" class="art-tag">Mente</a>
+        <a href="#" class="art-tag">Anti-inflamatórios</a>
+        <a href="#" class="art-tag">Nutrição</a>
+        <a href="#" class="art-tag">Saúde</a>
+        <a href="#" class="art-tag">Cúrcuma</a>
+        <a href="#" class="art-tag">Ómega-3</a>
+    </div>
+
+    <!-- PARTILHAR -->
+    <div class="art-share">
+        <span>Partilhar</span>
+        <button class="share-btn whatsapp" onclick="shareWhatsApp()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+        </button>
+        <button class="share-btn facebook" onclick="shareFacebook()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook
+        </button>
+        <button class="share-btn copy" onclick="copyLink()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            Copiar link
+        </button>
+    </div>
+
+    <!-- CAIXA DO AUTOR -->
+    <!-- EDITAR: dados do autor -->
+    <div class="author-box">
+        <div class="author-box-inner">
+            <img
+                class="author-avatar"
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=80&auto=format&fit=crop&crop=face"
+                alt="Foto de Ana Silva"
+                loading="lazy"
+            >
+            <div class="author-info">
+                <h4>Ana Silva</h4>
+                <p>Nutricionista e apaixonada por alimentação funcional. Escreve sobre nutrição com base em evidência científica, tornando a informação acessível a todos.</p>
+            </div>
+        </div>
+    </div>
+
+</article>
+
+<!-- ECG DIVIDER -->
+<div class="ecg-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 36" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="ecgG" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%"   stop-color="#3BA935"/>
+                <stop offset="50%"  stop-color="#29B5C5"/>
+                <stop offset="100%" stop-color="#1B3A6B"/>
+            </linearGradient>
+        </defs>
+        <polyline points="0,18 100,18 140,18 155,4 165,32 178,4 190,32 200,18 310,18 360,18 400,18 440,18 455,4 465,32 478,4 490,32 500,18 610,18 660,18 700,18 740,18 755,4 765,32 778,4 790,32 800,18 910,18 960,18 1000,18 1040,18 1055,4 1065,32 1078,4 1090,32 1100,18 1200,18 1240,18 1280,18 1295,4 1305,32 1318,4 1330,32 1340,18 1440,18 1490,18 1530,18 1570,18 1585,4 1595,32 1608,4 1620,32 1630,18 1740,18 1790,18 1830,18 1870,18 1885,4 1895,32 1908,4 1920,32 1930,18 2040,18 2090,18" fill="none" stroke="url(#ecgG)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+</div>
+
+<!-- ARTIGOS RELACIONADOS -->
+<!-- EDITAR: artigos relacionados -->
+<section class="related">
+    <div class="container">
+        <h2>Artigos <em>Relacionados</em></h2>
+        <div class="related-grid">
+
+            <a href="#" class="rel-card">
+                <img loading="lazy" src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=600&q=80&auto=format&fit=crop" alt="Smoothie verde">
+                <div class="rel-card-body">
+                    <div class="rel-cat" style="color:var(--orange)">🍳 Receitas</div>
+                    <h3>Smoothie Verde Anti-inflamatório: Receita em 3 Minutos</h3>
+                </div>
+                <div class="rel-card-foot"><span>⏱ 3 min</span><span class="ler">Ler →</span></div>
+            </a>
+
+            <a href="#" class="rel-card">
+                <img loading="lazy" src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=600&q=80&auto=format&fit=crop" alt="Sono reparador">
+                <div class="rel-card-body">
+                    <div class="rel-cat" style="color:var(--teal)">🌿 Bem-estar</div>
+                    <h3>O Poder do Sono: Porque 8 Horas Mudam Absolutamente Tudo</h3>
+                </div>
+                <div class="rel-card-foot"><span>⏱ 7 min</span><span class="ler">Ler →</span></div>
+            </a>
+
+            <a href="#" class="rel-card">
+                <img loading="lazy" src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80&auto=format&fit=crop" alt="Meditação">
+                <div class="rel-card-body">
+                    <div class="rel-cat" style="color:var(--purple)">🧠 Mente</div>
+                    <h3>Mindfulness: Como 5 Minutos por Dia Reduzem o Stress</h3>
+                </div>
+                <div class="rel-card-foot"><span>⏱ 5 min</span><span class="ler">Ler →</span></div>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter" id="newsletter">
+    <div class="newsletter-inner">
+        <div class="emoji">🌿</div>
+        <h2>Vive em Equilíbrio</h2>
+        <p>Recebe semanalmente os melhores artigos diretamente no teu email. Sem spam, apenas conteúdo que transforma.</p>
+        <div class="nl-form">
+            <input type="email" id="nlEmail" placeholder="O teu email" autocomplete="email">
+            <button onclick="subscribeNL()">Subscrever</button>
+        </div>
+        <p class="nl-note">Grátis · Cancela quando quiseres · Zero spam</p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand"><span class="bio">Bio</span>Equilíbrio</div>
+                <p class="footer-desc">O teu espaço para uma vida mais saudável. Mente consciente, movimento constante, mente tranquila.</p>
+                <div class="footer-social">
+                    <a href="#" class="soc-icon" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                    <a href="#" class="soc-icon" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Categorias</h4>
+                <ul>
+                    <li><a href="#">🥗 Mente</a></li>
+                    <li><a href="#">💪 Exercício</a></li>
+                    <li><a href="#">🧠 Mente</a></li>
+                    <li><a href="#">🍳 Receitas</a></li>
+                    <li><a href="#">🌿 Bem-estar</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Projeto</h4>
+                <ul>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Escreve para Nós</a></li>
+                    <li><a href="#">Parceiros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacidade</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">Cookies</a></li>
+                    <li><a href="#">Afiliados</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 BioEquilíbrio · Todos os direitos reservados</span>
+            <span>BioEquilíbrio.online</span>
+        </div>
+    </div>
+</footer>
+
+</main>
+
+<!-- Botão voltar ao topo -->
+<button id="back-top" aria-label="Voltar ao topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+    /* --- Menu mobile --- */
+    function openMenu()  { const m = document.getElementById('mobileMenu'); m.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeMenu() { const m = document.getElementById('mobileMenu'); m.classList.remove('open'); document.body.style.overflow = ''; }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+    /* --- Barra de progresso de leitura --- */
+    const progressBar = document.getElementById('read-progress');
+    window.addEventListener('scroll', () => {
+        const el = document.getElementById('art-content');
+        if (!el) return;
+        const start = el.offsetTop;
+        const end   = el.offsetTop + el.offsetHeight - window.innerHeight;
+        const pct   = Math.min(100, Math.max(0, ((window.scrollY - start) / (end - start)) * 100));
+        progressBar.style.width = pct + '%';
+    });
+
+    /* --- Botão voltar ao topo --- */
+    const backTop = document.getElementById('back-top');
+    window.addEventListener('scroll', () => {
+        backTop.classList.toggle('visible', window.scrollY > 400);
+    });
+
+    /* --- Partilhar --- */
+    function shareWhatsApp() {
+        window.open('https://wa.me/?text=' + encodeURIComponent(document.title + ' — ' + location.href), '_blank');
+    }
+    function shareFacebook() {
+        window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(location.href), '_blank');
+    }
+    function copyLink() {
+        navigator.clipboard.writeText(location.href).then(() => {
+            const btn = document.querySelector('.share-btn.copy');
+            btn.textContent = '✓ Copiado!';
+            setTimeout(() => { btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> Copiar link'; }, 2000);
+        });
+    }
+
+    /* --- Newsletter --- */
+    function subscribeNL() {
+        const input = document.getElementById('nlEmail');
+        const email = input.value.trim();
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const btn = input.nextElementSibling;
+        if (!re.test(email)) { input.style.borderColor='#f87171'; input.value=''; input.placeholder='Email inválido — tenta de novo'; return; }
+        btn.textContent = '✓ Subscrito!';
+        btn.style.background = '#dcfce7';
+        btn.style.color = '#166534';
+        input.value = ''; input.disabled = true;
+        input.placeholder = 'Obrigado! Verifica o teu email.';
+    }
+</script>
+
+</body>
+</html>
