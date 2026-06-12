@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="2f26fa86-43b5-4cc9-b0a6-ceaff20b7b14"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Conhece a equipa por detrás do BioEquilíbrio — o projeto português dedicado à alimentação consciente, exercício e saúde mental.">
@@ -265,13 +264,50 @@
         .footer-col ul li a:hover { opacity: 1; }
         .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 1.25rem; display: flex; justify-content: space-between; align-items: center; font-size: .78rem; opacity: .4; }
 
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            .nav-links { display: none; }
-            .nav-hamburger { display: flex; }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-            .values-grid { grid-template-columns: repeat(2, 1fr); }
+        const BREVO_API_KEY = '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';
+    const BREVO_LIST_ID = 2;
+
+    async function subscribeNL() {
+        const input = document.getElementById('nlEmail');
+        const email = input.value.trim();
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const btn = input.nextElementSibling;
+        if (!re.test(email)) {
+            input.style.borderColor = '#f87171';
+            input.value = '';
+            input.placeholder = 'Email inválido — tenta de novo';
+            return;
         }
+        btn.textContent = 'A subscrever...';
+        btn.disabled = true;
+        try {
+            const res = await fetch('https://api.brevo.com/v3/contacts', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'api-key': BREVO_API_KEY },
+                body: JSON.stringify({ email: email, listIds: [BREVO_LIST_ID], updateEnabled: true })
+            });
+            if (res.ok || res.status === 204) {
+                btn.textContent = '✓ Subscrito!';
+                btn.style.background = '#dcfce7'; btn.style.color = '#166534';
+                input.value = ''; input.disabled = true;
+                input.placeholder = 'Obrigado! Verifica o teu email.';
+            } else if (res.status === 400) {
+                const data = await res.json();
+                if (data.code === 'duplicate_parameter') {
+                    btn.textContent = '✓ Já subscrito!';
+                    btn.style.background = '#dcfce7'; btn.style.color = '#166534';
+                    input.value = ''; input.disabled = true;
+                    input.placeholder = 'Este email já está na lista.';
+                } else { throw new Error('Erro ' + res.status); }
+            } else { throw new Error('Erro ' + res.status); }
+        } catch (err) {
+            btn.textContent = 'Tentar novamente';
+            btn.disabled = false;
+            input.style.borderColor = '#f87171';
+            input.placeholder = 'Ocorreu um erro — tenta de novo';
+            input.value = '';
+        }
+    }
         @media (max-width: 600px) {
             .team-grid { grid-template-columns: 1fr; }
             .values-grid { grid-template-columns: 1fr; }
@@ -280,8 +316,6 @@
             .footer-bottom { flex-direction: column; gap: .4rem; text-align: center; }
         }
     </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1576487734267234"
-     crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -429,7 +463,7 @@
     <div class="contact-cta">
         <h3>Tens uma questão ou sugestão?</h3>
         <p>Adoramos receber feedback dos nossos leitores — sejam correções, sugestões de temas ou propostas de colaboração.</p>
-        <a href="mailto:bioequilibrio@proton.me" class="btn">✉️ Enviar mensagem</a>
+        <a href="mailto:contacto@bioequilibrio.online" class="btn">✉️ Enviar mensagem</a>
     </div>
 
 </div>
@@ -484,7 +518,7 @@
                     <li><a href="/sobre-nos.html">Sobre Nós</a></li>
                     <li><a href="#">Escreve para Nós</a></li>
                     <li><a href="#">Parceiros</a></li>
-                    <li><a href="mailto:bioequilibrio@proton.me">Contacto</a></li>
+                    <li><a href="mailto:contacto@bioequilibrio.online">Contacto</a></li>
                 </ul>
             </div>
             <div class="footer-col">

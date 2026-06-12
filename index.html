@@ -1282,27 +1282,49 @@
         card.onclick = null;
     }
 
-    /* --- Newsletter (integrar Brevo / Mailchimp aqui depois) --- */
-    function subscribeNL() {
+    const BREVO_API_KEY = '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';
+    const BREVO_LIST_ID = 2;
+
+    async function subscribeNL() {
         const input = document.getElementById('nlEmail');
         const email = input.value.trim();
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const btn = input.nextElementSibling;
-
         if (!re.test(email)) {
             input.style.borderColor = '#f87171';
             input.value = '';
             input.placeholder = 'Email inválido — tenta de novo';
             return;
         }
-
-        /* TODO: substituir pelo endpoint real (Brevo, Mailchimp, etc.) */
-        btn.textContent = '✓ Subscrito!';
-        btn.style.background = '#dcfce7';
-        btn.style.color = '#166534';
-        input.value = '';
-        input.disabled = true;
-        input.placeholder = 'Obrigado! Verifica o teu email.';
+        btn.textContent = 'A subscrever...';
+        btn.disabled = true;
+        try {
+            const res = await fetch('https://api.brevo.com/v3/contacts', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'api-key': BREVO_API_KEY },
+                body: JSON.stringify({ email: email, listIds: [BREVO_LIST_ID], updateEnabled: true })
+            });
+            if (res.ok || res.status === 204) {
+                btn.textContent = '✓ Subscrito!';
+                btn.style.background = '#dcfce7'; btn.style.color = '#166534';
+                input.value = ''; input.disabled = true;
+                input.placeholder = 'Obrigado! Verifica o teu email.';
+            } else if (res.status === 400) {
+                const data = await res.json();
+                if (data.code === 'duplicate_parameter') {
+                    btn.textContent = '✓ Já subscrito!';
+                    btn.style.background = '#dcfce7'; btn.style.color = '#166534';
+                    input.value = ''; input.disabled = true;
+                    input.placeholder = 'Este email já está na lista.';
+                } else { throw new Error('Erro ' + res.status); }
+            } else { throw new Error('Erro ' + res.status); }
+        } catch (err) {
+            btn.textContent = 'Tentar novamente';
+            btn.disabled = false;
+            input.style.borderColor = '#f87171';
+            input.placeholder = 'Ocorreu um erro — tenta de novo';
+            input.value = '';
+        }
     }
 </script>
 
