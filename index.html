@@ -700,11 +700,11 @@
         </button>
     </div>
 
-    <a class="mm-link" href="#" onclick="closeMenu()"><span class="mm-dot" style="background:var(--green)"></span>Alimentação</a>
-    <a class="mm-link" href="#" onclick="closeMenu()"><span class="mm-dot" style="background:var(--blue)"></span>Exercício</a>
-    <a class="mm-link" href="#" onclick="closeMenu()"><span class="mm-dot" style="background:var(--purple)"></span>Mente</a>
-    <a class="mm-link" href="#" onclick="closeMenu()"><span class="mm-dot" style="background:var(--orange)"></span>Receitas</a>
-    <a class="mm-link" href="#" onclick="closeMenu()"><span class="mm-dot" style="background:var(--teal)"></span>Bem-estar</a>
+    <button class="mm-link" style="width:100%; border:none; background:none; text-align:left; cursor:pointer;" onclick="mobileFilter('alimentacao')"><span class="mm-dot" style="background:var(--green)"></span>Alimentação</button>
+    <button class="mm-link" style="width:100%; border:none; background:none; text-align:left; cursor:pointer;" onclick="mobileFilter('exercicio')"><span class="mm-dot" style="background:var(--blue)"></span>Exercício</button>
+    <button class="mm-link" style="width:100%; border:none; background:none; text-align:left; cursor:pointer;" onclick="mobileFilter('mente')"><span class="mm-dot" style="background:var(--purple)"></span>Mente</button>
+    <button class="mm-link" style="width:100%; border:none; background:none; text-align:left; cursor:pointer;" onclick="mobileFilter('receitas')"><span class="mm-dot" style="background:var(--orange)"></span>Receitas</button>
+    <button class="mm-link" style="width:100%; border:none; background:none; text-align:left; cursor:pointer;" onclick="mobileFilter('bemestar')"><span class="mm-dot" style="background:var(--teal)"></span>Bem-estar</button>
 
     <div class="mm-footer">
         <a class="mm-cta" href="#newsletter" onclick="closeMenu()">Subscrever Newsletter</a>
@@ -719,7 +719,7 @@
 <!-- HERO -->
 <section class="hero">
     <div class="container">
-        <a href="artigos/template-artigo.html" class="hero-card">
+        <a href="artigos/mindfulness-5-minutos.html" class="hero-card">
             <img
                 src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1400&q=80&auto=format&fit=crop"
                 alt="Pessoa em meditação junto à natureza — paz e equilíbrio interior"
@@ -1054,12 +1054,21 @@
     /* --- Filtro de categorias --- */
     function filterCat(btn, cat) {
         document.querySelectorAll('.cats-bar .chip').forEach(c => c.classList.remove('active'));
-        btn.classList.add('active');
+        if (btn) btn.classList.add('active');
 
         document.querySelectorAll('#articlesGrid .art-card').forEach(card => {
             const show = cat === 'todos' || card.dataset.cat === cat;
             card.style.display = show ? 'flex' : 'none';
         });
+    }
+
+    function mobileFilter(cat) {
+        // Encontrar o botão correspondente na barra de chips para manter sincronizado
+        const btn = document.querySelector(`.chip.c-${cat.substring(0,3)}`);
+        filterCat(btn, cat);
+        closeMenu();
+        // Scroll suave até à grelha de artigos
+        document.getElementById('articlesGrid').scrollIntoView({ behavior: 'smooth' });
     }
 
     /* --- Reprodutor YouTube (embed ao clique) --- */
