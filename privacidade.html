@@ -376,7 +376,7 @@
     <p>Não vendemos, alugamos nem partilhamos os teus dados pessoais com terceiros para fins comerciais. Os dados podem ser partilhados apenas com:</p>
     <ul>
         <li><strong>Google LLC</strong> — para Analytics e AdSense, ao abrigo do RGPD e das cláusulas contratuais-tipo</li>
-        <li><strong>Fornecedor de newsletter</strong> — caso subscreva a newsletter (serviço a integrar)</li>
+        <li><strong>Brevo (Sendinblue)</strong> — plataforma de newsletter para envio de emails aos subscritores</li>
         <li><strong>Autoridades competentes</strong> — se legalmente obrigados a tal</li>
     </ul>
 
@@ -494,14 +494,51 @@
     function openMenu()  { const m = document.getElementById('mobileMenu'); m.classList.add('open'); document.body.style.overflow = 'hidden'; }
     function closeMenu() { const m = document.getElementById('mobileMenu'); m.classList.remove('open'); document.body.style.overflow = ''; }
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
-    function subscribeNL() {
+    const BREVO_API_KEY = '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';
+    const BREVO_LIST_ID = 2;
+
+    async function subscribeNL() {
         const input = document.getElementById('nlEmail');
         const email = input.value.trim();
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const btn = input.nextElementSibling;
-        if (!re.test(email)) { input.style.borderColor='#f87171'; input.value=''; input.placeholder='Email inválido — tenta de novo'; return; }
-        btn.textContent = '✓ Subscrito!'; btn.style.background = '#dcfce7'; btn.style.color = '#166534';
-        input.value = ''; input.disabled = true; input.placeholder = 'Obrigado! Verifica o teu email.';
+
+        if (!re.test(email)) {
+            input.style.borderColor = '#f87171';
+            input.value = '';
+            input.placeholder = 'Email inválido — tenta de novo';
+            return;
+        }
+        btn.textContent = 'A subscrever...';
+        btn.disabled = true;
+
+        try {
+            const res = await fetch('https://api.brevo.com/v3/contacts', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'api-key': BREVO_API_KEY },
+                body: JSON.stringify({ email: email, listIds: [BREVO_LIST_ID], updateEnabled: true })
+            });
+            if (res.ok || res.status === 204) {
+                btn.textContent = '\u2713 Subscrito!';
+                btn.style.background = '#dcfce7'; btn.style.color = '#166534';
+                input.value = ''; input.disabled = true;
+                input.placeholder = 'Obrigado! Verifica o teu email.';
+            } else if (res.status === 400) {
+                const data = await res.json();
+                if (data.code === 'duplicate_parameter') {
+                    btn.textContent = '\u2713 J\u00e1 subscrito!';
+                    btn.style.background = '#dcfce7'; btn.style.color = '#166534';
+                    input.value = ''; input.disabled = true;
+                    input.placeholder = 'Este email j\u00e1 est\u00e1 na lista.';
+                } else { throw new Error('Erro ' + res.status); }
+            } else { throw new Error('Erro ' + res.status); }
+        } catch (err) {
+            btn.textContent = 'Tentar novamente';
+            btn.disabled = false;
+            input.style.borderColor = '#f87171';
+            input.placeholder = 'Ocorreu um erro \u2014 tenta de novo';
+            input.value = '';
+        }
     }
 </script>
 </body>
