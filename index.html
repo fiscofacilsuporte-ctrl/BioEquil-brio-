@@ -977,7 +977,7 @@
 </section>
 
 <!-- SUPLEMENTOS RECOMENDADOS -->
-<section class="section">
+<section class="section" id="suplementos-recomendados">
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">Suplementos <em>Recomendados</em></h2>
@@ -1004,7 +1004,7 @@
 
             <!-- VITAMINA D3 K2 -->
             <div class="art-card">
-                <img class="art-card-img" src="https://images.unsplash.com/photo-1616671285410-09680da50009?w=700&q=80&auto=format&fit=crop" alt="Vitamina D3 K2">
+                <img class="art-card-img" src="https://images.unsplash.com/photo-1550572017-4fcdbb59cc32?w=700&q=80&auto=format&fit=crop" alt="Vitamina D3 K2">
                 <div class="art-card-body">
                     <div class="art-cat" style="color:var(--blue)">☀️ Ossos e Imunidade</div>
                     <h3>Vitamina D3 + K2</h3>
@@ -1017,7 +1017,7 @@
 
             <!-- FERRO -->
             <div class="art-card">
-                <img class="art-card-img" src="https://images.unsplash.com/photo-1550572017-4fcdbb59cc32?w=700&q=80&auto=format&fit=crop" alt="Suplemento de Ferro">
+                <img class="art-card-img" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=700&q=80&auto=format&fit=crop" alt="Suplemento de Ferro">
                 <div class="art-card-body">
                     <div class="art-cat" style="color:var(--purple)">🩸 Vitalidade e Sangue</div>
                     <h3>Ferro</h3>
@@ -1131,6 +1131,12 @@
             const show = cat === 'todos' || card.dataset.cat === cat;
             card.style.display = show ? 'flex' : 'none';
         });
+
+        // Mostrar/Ocultar secção de suplementos recomendados
+        const supSection = document.getElementById('suplementos-recomendados');
+        if (supSection) {
+            supSection.style.display = (cat === 'todos' || cat === 'suplementos') ? 'block' : 'none';
+        }
     }
 
     function mobileFilter(cat) {
