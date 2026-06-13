@@ -353,6 +353,7 @@
         .chip.c-men  { color: var(--purple); } .chip.c-men.active  { background: var(--purple-light); }
         .chip.c-rec  { color: var(--orange); } .chip.c-rec.active  { background: var(--orange-light); }
         .chip.c-bem  { color: var(--teal);   } .chip.c-bem.active  { background: var(--teal-light);   }
+        .chip.c-vid  { color: var(--blue);   } .chip.c-vid.active  { background: var(--blue-light);   }
 
         /* ============================================================
            ARTICLES GRID
@@ -709,6 +710,7 @@
     <button class="mm-link" style="width:100%; border:none; background:none; text-align:left; cursor:pointer;" onclick="mobileFilter('receitas')"><span class="mm-dot" style="background:var(--orange)"></span>Receitas</button>
     <button class="mm-link" style="width:100%; border:none; background:none; text-align:left; cursor:pointer;" onclick="mobileFilter('bemestar')"><span class="mm-dot" style="background:var(--teal)"></span>Bem-estar</button>
     <button class="mm-link" style="width:100%; border:none; background:none; text-align:left; cursor:pointer;" onclick="mobileFilter('suplementos')"><span class="mm-dot" style="background:var(--orange)"></span>Suplementos</button>
+    <button class="mm-link" style="width:100%; border:none; background:none; text-align:left; cursor:pointer;" onclick="mobileFilter('videos')"><span class="mm-dot" style="background:var(--blue)"></span>Vídeos</button>
 
     <div class="mm-footer">
         <a class="mm-cta" href="#newsletter" onclick="closeMenu()">Subscrever Newsletter</a>
@@ -776,6 +778,7 @@
         <button class="chip c-rec" role="tab" onclick="filterCat(this,'receitas')">🍳 Receitas</button>
         <button class="chip c-bem" role="tab" onclick="filterCat(this,'bemestar')">🌿 Bem-estar</button>
         <button class="chip c-sup" role="tab" onclick="filterCat(this,'suplementos')">💊 Suplementos</button>
+        <button class="chip c-vid" role="tab" onclick="filterCat(this,'videos')">🎬 Vídeos</button>
         <button class="chip" role="tab" onclick="filterCat(this,'todos')">✦ Todos</button>
     </div>
 </div>
@@ -807,7 +810,7 @@
 
 
             <!-- NOVO CARD DE VÍDEO (2ª POSIÇÃO) -->
-            <div class="vid-card" id="vid-destaque" data-ytid="YmOwWOYU3Es" onclick="loadYT('vid-destaque')" style="cursor:pointer; position:relative; border-radius:var(--radius); overflow:hidden; background:var(--blue); min-height:200px;">
+            <div class="vid-card art-card" data-cat="videos" id="vid-destaque" data-ytid="YmOwWOYU3Es" onclick="loadYT('vid-destaque')" style="cursor:pointer; position:relative; border-radius:var(--radius); overflow:hidden; background:var(--blue); min-height:200px;">
                 <img loading="lazy" src="https://img.youtube.com/vi/YmOwWOYU3Es/maxresdefault.jpg" alt="Vídeo em Destaque" style="width:100%; height:100%; object-fit:cover; opacity:0.8;">
                 <div class="vid-overlay" style="position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center; align-items:center; background:linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding:1rem; text-align:center; color:#fff;">
                     <div class="play-btn" style="width:48px; height:48px; background:var(--green); border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:0.5rem;">
