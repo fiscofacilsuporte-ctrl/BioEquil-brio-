@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="2f26fa86-43b5-4cc9-b0a6-ceaff20b7b14"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Descobre como as proteínas vegetais estão a revolucionar a alimentação em 2026 e quais os melhores alimentos para substituir a carne com saúde.">
+    <meta name="keywords" content="proteína vegetal, alimentação saudável, sustentabilidade, nutrição 2026, substitutos carne">
+    <meta name="author" content="Ana Silva">
+
+    <meta property="og:title" content="Proteína Vegetal: A Revolução no Prato em 2026 | BioEquilíbrio">
+    <meta property="og:description" content="Descobre como as proteínas vegetais estão a revolucionar a alimentação e como integrá-las no teu dia a dia.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200&q=80&auto=format&fit=crop">
+    <meta property="og:url" content="https://bioequilibrio.online/artigos/proteina-vegetal-revolucao-2026.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="pt_PT">
+    <meta property="article:published_time" content="2026-06-16">
+    <meta property="article:author" content="Ana Silva">
+    <meta property="article:section" content="Alimentação">
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <title>Proteína Vegetal: A Revolução no Prato em 2026 | BioEquilíbrio</title>
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://bioequilibrio.online/artigos/proteina-vegetal-revolucao-2026.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --green:        #3BA935;
+            --green-dark:   #2a7a26;
+            --green-light:  #edf7ec;
+            --blue:         #1B3A6B;
+            --blue-light:   #e8eef7;
+            --teal:         #29B5C5;
+            --teal-light:   #e0f7fa;
+            --orange:       #E07D2F;
+            --orange-light: #fff3e0;
+            --purple:       #7B4FA6;
+            --purple-light: #f3e8ff;
+            --bg:           #FAFBF8;
+            --bg-section:   #F1F5EF;
+            --text:         #111827;
+            --text-mid:     #374151;
+            --text-light:   #6B7280;
+            --border:       #E2E8DF;
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body:    'Inter', system-ui, sans-serif;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+        img { max-width: 100%; height: auto; display: block; }
+        a   { text-decoration: none; color: inherit; }
+        button { cursor: pointer; font-family: var(--font-body); }
+
+        #read-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            background: linear-gradient(90deg, var(--green), var(--teal));
+            z-index: 999;
+            transition: width .1s linear;
+        }
+
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 90;
+            background: rgba(250,251,248,.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.25rem;
+            height: 62px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .nav-brand {
+            font-weight: 700;
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: .45rem;
+            white-space: nowrap;
+        }
+        .nav-brand img { height: 34px; width: auto; }
+        .bio  { color: var(--green); }
+        .equi { color: var(--blue); }
+        .nav-links { display: flex; align-items: center; gap: .15rem; }
+        .nav-links a {
+            padding: .4rem .75rem;
+            border-radius: 999px;
+            font-size: .83rem;
+            font-weight: 500;
+            color: var(--text-mid);
+            transition: background .18s, color .18s;
+            white-space: nowrap;
+        }
+        .nav-links a:hover { background: var(--green-light); color: var(--green-dark); }
+        .nav-links .nav-cta {
+            background: var(--green);
+            color: #fff !important;
+            font-weight: 700;
+            font-size: .8rem;
+            margin-left: .5rem;
+        }
+        .nav-links .nav-cta:hover { background: var(--green-dark) !important; }
+        .nav-hamburger {
+            display: none;
+            background: none;
+            border: none;
+            padding: .5rem;
+            color: var(--text);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background: var(--bg);
+            flex-direction: column;
+            padding: 0 1.25rem 1.5rem;
+        }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 62px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 1.25rem;
+        }
+        .mobile-menu-top button { background: none; border: none; padding: .5rem; color: var(--text); }
+        .mm-link {
+            display: flex;
+            align-items: center;
+            gap: .85rem;
+            padding: .9rem .75rem;
+            border-radius: .75rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text);
+            transition: background .15s;
+        }
+        .mm-link:hover { background: var(--bg-section); }
+        .mm-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+        .mm-footer { margin-top: auto; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+        .mm-cta {
+            display: block;
+            background: var(--green);
+            color: #fff;
+            text-align: center;
+            padding: .9rem;
+            border-radius: .75rem;
+            font-weight: 700;
+        }
+
+        .breadcrumb {
+            max-width: 740px;
+            margin: 1.5rem auto 0;
+            padding: 0 1.25rem;
+            font-size: .78rem;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+            flex-wrap: wrap;
+        }
+        .breadcrumb a { color: var(--green); }
+        .breadcrumb a:hover { color: var(--green-dark); }
+
+        .art-header {
+            max-width: 740px;
+            margin: 1.25rem auto 0;
+            padding: 0 1.25rem;
+            text-align: center;
+        }
+        .cat-tag {
+            display: inline-block;
+            padding: .3rem .9rem;
+            border-radius: 999px;
+            font-size: .72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .09em;
+            margin-bottom: 1rem;
+        }
+        .cat-tag.alimentacao { background: var(--green-light); color: var(--green-dark); }
+
+        .art-header h1 {
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 4vw, 2.75rem);
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--text);
+            margin-bottom: 1.25rem;
+        }
+        .art-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: .4rem .85rem;
+            font-size: .82rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+        .art-meta .author { font-weight: 600; color: var(--text-mid); }
+        .art-meta .sep { opacity: .4; }
+
+        .art-hero {
+            max-width: 860px;
+            margin: 0 auto 2rem;
+            padding: 0 1.25rem;
+        }
+        .art-hero img {
+            width: 100%;
+            border-radius: 1.25rem;
+            max-height: 460px;
+            object-fit: cover;
+        }
+        .art-hero figcaption {
+            text-align: center;
+            font-size: .75rem;
+            color: var(--text-light);
+            margin-top: .5rem;
+            font-style: italic;
+        }
+
+        .art-body {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 1.25rem 2rem;
+        }
+
+        .art-body p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-mid);
+            margin-bottom: 1.4rem;
+        }
+        .art-body p:first-child {
+            font-size: 1.15rem;
+            color: var(--text);
+            font-weight: 400;
+        }
+        .art-body h2 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+            margin: 2rem 0 .85rem;
+            padding-left: .85rem;
+            border-left: 3px solid var(--green);
+        }
+        .art-body h3 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text);
+            margin: 1.5rem 0 .65rem;
+        }
+        .art-body ul, .art-body ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1.4rem;
+        }
+        .art-body li {
+            font-size: 1.02rem;
+            line-height: 1.75;
+            color: var(--text-mid);
+            margin-bottom: .4rem;
+        }
+        .art-body a {
+            color: var(--green);
+            font-weight: 500;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .art-body a:hover { color: var(--green-dark); }
+        .art-body strong { color: var(--text); font-weight: 600; }
+
+        .highlight-box {
+            background: var(--green-light);
+            border: 1.5px solid rgba(59,169,53,.2);
+            border-radius: 1rem;
+            padding: 1.25rem 1.5rem;
+            margin: 1.75rem 0;
+        }
+        .highlight-box p {
+            margin: 0 !important;
+            font-size: .95rem !important;
+            color: var(--green-dark) !important;
+        }
+        .highlight-box strong { color: var(--green-dark); }
+
+        .art-tags {
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+            padding: 0 1.25rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+        }
+        .art-tag {
+            padding: .3rem .85rem;
+            border-radius: 999px;
+            border: 1.5px solid var(--border);
+            font-size: .78rem;
+            font-weight: 500;
+            color: var(--text-light);
+            transition: all .18s;
+        }
+        .art-tag:hover { border-color: var(--green); color: var(--green); }
+
+        .art-share {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            padding: 1.25rem 1.25rem;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            flex-wrap: wrap;
+        }
+        .art-share span {
+            font-size: .82rem;
+            font-weight: 700;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: .07em;
+            margin-right: .25rem;
+        }
+        .share-btn {
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+            padding: .45rem 1rem;
+            font-size: .82rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all .18s;
+            border-radius: 4px;
+        }
+        .share-btn.whatsapp { background: #25D366; color: #fff; }
+        .share-btn.whatsapp:hover { background: #1ebe5a; }
+        .share-btn.facebook { background: #1877F2; color: #fff; }
+        .share-btn.facebook:hover { background: #1362c7; }
+        .share-btn.copy { background: var(--bg-section); color: var(--text-mid); border: 1px solid var(--border); }
+        .share-btn.copy:hover { background: var(--border); }
+
+        .author-box {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            padding: 0 1.25rem;
+        }
+        .author-box-inner {
+            background: var(--bg-section);
+            border-radius: 1rem;
+            padding: 1.25rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+        .author-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+            background: var(--border);
+        }
+        .author-info h4 {
+            font-weight: 700;
+            font-size: .9rem;
+            margin-bottom: .2rem;
+        }
+        .author-info p {
+            font-size: .82rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        footer { background: var(--blue); color: #fff; }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2.5rem 1.25rem 1.5rem;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,.1);
+            padding-top: 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: .78rem;
+            opacity: .4;
+        }
+
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .nav-hamburger { display: flex; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="read-progress"></div>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="/" class="nav-brand">
+            <img src="/logo.png" alt="BioEquilíbrio">
+            <span><span class="bio">Bio</span><span class="equi">Equilíbrio</span></span>
+        </a>
+        <div class="nav-links">
+            <a href="/">Início</a>
+            <a href="#">Alimentação</a>
+            <a href="#">Exercício</a>
+            <a href="#">Mente</a>
+            <a href="#">Receitas</a>
+            <a href="#">Bem-estar</a>
+            <a href="/#newsletter" class="nav-cta">Newsletter</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+<article>
+    <nav class="breadcrumb" aria-label="Localização">
+        <a href="/">Início</a>
+        <span>›</span>
+        <a href="#">Alimentação</a>
+        <span>›</span>
+        <span>Proteína Vegetal 2026</span>
+    </nav>
+
+    <header class="art-header">
+        <span class="cat-tag alimentacao">🥗 Alimentação</span>
+        <h1>Proteína Vegetal: A Revolução no Prato em 2026</h1>
+        <div class="art-meta">
+            <span class="author">Por Ana Silva</span>
+            <span class="sep">·</span>
+            <span>16 de Junho de 2026</span>
+            <span class="sep">·</span>
+            <span>⏱ 5 min de leitura</span>
+        </div>
+    </header>
+
+    <figure class="art-hero">
+        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200&q=80&auto=format&fit=crop" alt="Bowl com proteínas vegetais">
+        <figcaption>As fontes vegetais de proteína são cada vez mais a escolha principal para saúde e sustentabilidade.</figcaption>
+    </figure>
+
+    <div class="art-body" id="art-content">
+        <p>Estamos em 2026 e a forma como olhamos para a proteína mudou radicalmente. O que antes era visto como um "substituto" para quem não comia carne, tornou-se hoje o protagonista das mesas mais conscientes e saudáveis em Portugal.</p>
+
+        <p>A ciência é clara: uma dieta rica em proteínas de origem vegetal não só reduz a pegada ecológica, como está diretamente ligada a uma maior longevidade e menor risco de doenças metabólicas.</p>
+
+        <h2>O Protagonismo das Leguminosas</h2>
+        <p>O feijão, o grão-de-bico e as lentilhas deixaram de ser acompanhamentos. Em 2026, são a base de hambúrgueres artesanais, massas proteicas e até sobremesas funcionais. O segredo está na sua densidade nutricional: além de proteína, oferecem fibras que a carne simplesmente não possui.</p>
+
+        <div class="highlight-box">
+            <p>💡 <strong>Dica BioEquilíbrio:</strong> Para uma absorção completa de aminoácidos, combina as tuas leguminosas com um cereal integral (como arroz ou quinoa). Esta combinação clássica garante uma proteína completa.</p>
+        </div>
+
+        <h2>Novas Tendências: Proteína de Fungos e Algas</h2>
+        <p>Este ano assistimos à explosão das micoproteínas e das proteínas derivadas de algas como a espirulina e a chlorella. Estes "superalimentos" oferecem uma biodisponibilidade incrível e são fundamentais para quem procura performance física sem recorrer a produtos animais.</p>
+
+        <h2>Conclusão</h2>
+        <p>A revolução da proteína vegetal não é sobre proibição, mas sobre diversidade. Ao incluíres mais fontes vegetais no teu prato, estás a dar ao teu corpo uma farmácia natural de antioxidantes e fitonutrientes.</p>
+    </div>
+
+    <div class="art-tags">
+        <a href="#" class="art-tag">Alimentação</a>
+        <a href="#" class="art-tag">Proteína Vegetal</a>
+        <a href="#" class="art-tag">Sustentabilidade</a>
+        <a href="#" class="art-tag">Nutrição 2026</a>
+    </div>
+
+    <div class="art-share">
+        <span>Partilhar</span>
+        <button class="share-btn whatsapp" onclick="shareWhatsApp()">WhatsApp</button>
+        <button class="share-btn facebook" onclick="shareFacebook()">Facebook</button>
+        <button class="share-btn copy" onclick="copyLink()">Copiar link</button>
+    </div>
+
+    <div class="author-box">
+        <div class="author-box-inner">
+            <img class="author-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=80&auto=format&fit=crop&crop=face" alt="Ana Silva">
+            <div class="author-info">
+                <h4>Ana Silva</h4>
+                <p>Nutricionista focada em alimentação funcional e sustentável. Acredita que o futuro da saúde passa pelo que colocamos no prato todos os dias.</p>
+            </div>
+        </div>
+    </div>
+</article>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-bottom">
+            <span>© 2026 BioEquilíbrio · Todos os direitos reservados</span>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function shareWhatsApp() { window.open('https://wa.me/?text=' + encodeURIComponent(document.title + ' — ' + location.href), '_blank'); }
+    function shareFacebook() { window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(location.href), '_blank'); }
+    function copyLink() {
+        navigator.clipboard.writeText(location.href).then(() => {
+            alert('Link copiado!');
+        });
+    }
+</script>
+</body>
+</html>
